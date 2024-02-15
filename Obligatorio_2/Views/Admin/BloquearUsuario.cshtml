@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Bloquear Usuario";
+}
+
+<div class="card-header bg-secondary text-white">
+    <h2 class="mb-0">Bloquear Usuario</h2>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label class="py-2" for="email">Email:</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu Email">
+                        </div>
+                        <button type="submit" class="btn btn-secondary mt-3">Bloquear Usuario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="mt-5 alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="mt-5 alert alert-success">@ViewBag.SuccessMessage</div>
+}

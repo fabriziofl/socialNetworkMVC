@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Bloquear Post";
+}
+
+<div class="card-header bg-secondary text-white">
+    <h2 class="mb-0">Bloquear Post</h2>
+</div>
+
+<div class="container mt-5">
+    @if (ViewBag.Posts.Count == 0)
+    {
+        <div class="mt-5">No Hay Ningun Post Disponible para Mostrar</div>
+    }
+
+    @if (ViewBag.Posts.Count > 0)
+    {
+        @for (int i = 0; i < ViewBag.Posts.Count; i++)
+        {
+            <div class="container mt-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Titulo</th>
+                            <th>Texto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@ViewBag.Posts[i].Id</td>
+                            <td>@ViewBag.Posts[i].Titulo</td>
+                       
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="mt-5 alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="mt-5 alert alert-success">@ViewBag.SuccessMessage</div>
+}
